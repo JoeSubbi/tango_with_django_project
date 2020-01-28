@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+
+	<head>
+		<title>Rango</title>
+	</head>
+
+	<body>
+		<h1>Rango says...</h1>
+		<div>
+			hey there partner! <br />
+			<strong>{{ boldmessage }}</strong><br />
+		</div>
+		<div>
+			<a href="/rango/">Return</a><br />
+			<img src="{% static 'images/GUSEC.png' %}" alt= "Picture of GUSEC Logo" height="348" width="256" />
+			<img src="{{ MEDIA_URL }}barney.jpg" alt= "Picture of Barney" height="256" width="384"/>
+		</div>
+	</body>
+
+</html>
