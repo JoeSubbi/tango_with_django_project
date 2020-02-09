@@ -32,7 +32,6 @@ def index(request):
 
     # Call the helper function to handle the cookies
     visitor_cookie_handler(request)
-    context_dict['visits'] = request.session['visits']
 
     # Obtain our Response object early so we can add cookie information.
     response = render(request, 'rango/index.html', context=context_dict)
@@ -43,7 +42,12 @@ def index(request):
 
 
 def about(request):
-    context_dict = {'boldmessage': 'This tutorial has been put together by JoeSubbi!'}        
+    context_dict = {'boldmessage': 'This tutorial has been put together by JoeSubbi!'}
+    # Call the helper function to handle the cookies
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
+    context_dict['last_visit'] = request.session['last_visit']
+    
     return render(request, 'rango/about.html', context=context_dict)
 
 
